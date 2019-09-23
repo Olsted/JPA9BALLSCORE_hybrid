@@ -1,0 +1,73 @@
+/* This is a CSS file */
+
+body {
+  background-color: #333333;
+  color:ghostwhite;
+}
+
+* {
+font-family: 'Cherry Swash', cursive;
+}
+
+.btn-square-shadow {
+  display: inline-block;
+  padding: 0.2em 1em;
+  text-decoration: none;
+  /* background: rgb(192, 107, 28);ボタン色 */
+  background: #333333;/*ボタン色*/
+  color: #FFF;
+  border-bottom: solid 4px #627295;
+  border-radius: 3px;
+  font-size: 5vw;
+}
+.btn-square-shadow:active {
+  /*ボタンを押したとき*/
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+  border-bottom: none;
+}
+#time {
+  font-size: 18vw;
+  text-align: center;
+}
+label {
+  font-size: 5vw;
+}
+
+ /* === ボタンを表示するエリア ============================== */
+.btnPause {
+  margin         : auto;                /* 中央寄せ           */
+  /* width          : 60px;                ボタンの横幅       */
+}
+ 
+ /* === チェックボックス ==================================== */
+.btnPause input[type="checkbox"] {
+  display        : none;            /* チェックボックス非表示 */
+}
+ 
+ /* === チェックボックスのラベル（標準） ==================== */
+.btnPause label {
+  display        : block;               /* ボックス要素に変更 */
+  box-sizing     : border-box;          /* 枠線を含んだサイズ */
+  text-align     : center;              /* 文字位置は中央     */
+  border         : 2px solid rgb(226, 226, 226);      /* 枠線(一旦四方向)   */
+  border-radius  : 3px;                 /* 角丸               */
+  /* height         : 40px;                ボタンの高さ       */
+  height         : 100%;                /* ボタンの高さ       */
+  color          : rgb(80, 80, 80);
+  /* line-height    : 40px;                太字               */
+  line-height    : 300%;                /* 太字               */
+  font-weight    : bold;                /* 太字               */
+  background     : #eee;                /* 背景色             */
+  box-shadow     : none;    /* 影付け             */
+  transition     : .3s;                 /* ゆっくり変化       */
+}
+ 
+ /* === ON側のチェックボックスのラベル（ONのとき） ========== */
+.btnPause #pause:checked + label {
+  background     : #e00a0a;             /* 背景色             */
+  box-shadow     : 3px 3px 6px #888;                /* 影を消す           */
+  color          :rgb(248, 248, 248);
+  border         : 2px solid rgb(192, 107, 28);      /* 枠線(一旦四方向)   */
+}

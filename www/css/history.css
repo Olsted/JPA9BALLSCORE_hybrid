@@ -1,0 +1,10 @@
+/* This is a CSS file */
+
+* {
+  font-family: 'Economica', sans-serif;
+}
+
+.loading {
+  font-size: 7vw;
+  color: white;
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+    <link rel="stylesheet" href="components/loader.css">
+    <link rel="stylesheet" href="css/hoTable.css">
+    <link rel="stylesheet" href="css/help.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Noto+Sans+JP:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:300|Amatic+SC:700|Anton|Bangers|Caveat|Cherry+Swash:700|Corben:700|Creepster|Economica:700|Homemade+Apple|IM+Fell+DW+Pica+SC|Kaushan+Script|Londrina+Shadow|Montserrat+Subrayada|Oswald:700|Permanent+Marker|Quicksand|Roboto+Condensed:700|Teko|Vollkorn&display=swap" rel="stylesheet">
+    <script src="components/loader.js"></script>
+    <script src="js/time.js"></script>
+    <script src="js/saveTable.js"></script>
+    <script src="js/array.js"></script>
+    <script src="js/history.js"></script>
+    <script src="js/html2canvas.min.js"></script>
+    <script src="js/b64utils.js"></script>
+    
+    </script>
+</head>
+<body>
+
+<a href="index.html" class="btn-square-shadow">＜</a>
+<a href="history.html" class="btn-square-shadow">toDetail</a>
+<!-- <a href="#" class="btn-square-shadow" onclick="saveTable()">Save</a> -->
+
+<!-- <p class="btn-square-shadow2" onclick='saveTable("twitter")'>Twitter</p> -->
+<!-- <p class="btn-square-shadow2" onclick='saveTable("line")'>LINE</p> -->
+<img src=img/square-default.png class='social' onclick='saveTable("line")'></img>
+<img src=img/Twitter_Logo_WhiteOnBlue.png class='social' onclick='saveTable("twitter")'></img>
+<a href='helpSummary.html'><img src='img/help.png' class='helpLink' alt='help'></a>
+
+<!-- <a href="javascript:var str = 'https://line.me/R/msg/text/?'+ encodeURIComponent('test'); window.open(str, 'line', 'location=yes');">LINEへ</a> -->
+<!-- <a href="javascript:var str = 'https://line.me/R/msg/text/?'+ encodeURIComponent('test'); window.open(str, '_system', 'location=yes');">LINEへ</a> -->
+<!-- <a href="javascript:var str = 'https://line.me/R/msg/text/?'+ encodeURIComponent('test'); window.open(str, '_system', 'location=yes');">LINEへ</a> -->
+<!-- <a href="javascript:var str = 'https://line.me/R/msg/image/?/img/help.png'; window.open(str, '_system', 'location=yes');">LINEへ</a> -->
+<!-- <a href='https://line.me/R/msg/text/?' + encodeURIComponent('test')>LINEへ</a> -->
+
+<div class="mod-tbl" id="table">
+<div class="loading" id="loading">Now Loading...</div>
+    
+    
+</div><!-- /.mod-tbl -->
+
+<script>
+window.onload = function(){ 
+// 表のデータ
+// 表の動的作成
+  // if(localStorage.getItem(localStorage.key(BANKINGRESULT))!=null){
+    document.addEventListener("deviceready", function() { makeTable("table",false); } , false );
+    // document.addEventListener("deviceready", function() {} , false );
+    // makeTable("table",false);
+    console.log('make table');
+    
+  // }
+}
+</script>
+
+<a href="" id="canvas" download=""></a>
+</body>
+</html>

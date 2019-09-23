@@ -1,0 +1,40 @@
+/* This is a CSS file */
+
+.helpLink{
+  width: 4vw;
+  padding: 0vw 1.5vw 0vw 1.5vw;
+}
+
+.helpBody{
+  font-family: 'Cherry Swash', cursive;
+  font-size: 4vw;
+  overflow: auto;
+}
+
+.scoreExample{
+  width: 12vw;
+}
+
+.SummaryExample{
+  width: 60%;
+}
+
+.example{
+  width: 4vw;
+  background-color: rgb(211, 211, 211);
+}
+
+.timeout_help{
+  display: inline-block;
+  width: 6vw;
+}
+
+.dead{
+  display: inline-block;
+  width: 6vw;
+}
+
+.icon{
+  width: 4vw;
+  padding:0.5vw 0vw 0vw 0.5vw;
+}

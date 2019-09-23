@@ -1,0 +1,130 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+    <link rel="stylesheet" href="components/loader.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/help.css">
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:300|Amatic+SC:700|Anton|Bangers|Caveat|Cherry+Swash:700|Corben:700|Creepster|Economica:700|Homemade+Apple|IM+Fell+DW+Pica+SC|Kaushan+Script|Londrina+Shadow|Montserrat+Subrayada|Oswald:700|Permanent+Marker|Quicksand|Roboto+Condensed:700|Teko|Vollkorn&display=swap" rel="stylesheet">
+    <script src="components/loader.js"></script>
+    <script>
+        //
+        // TODO: Write JavaScript code here
+        //
+    </script>
+</head>
+<body class='helpBody'>
+  <a href="index.html" class="btn-square-shadow">＜</a><br><br>
+
+  各ボタン説明<br>
+  ・メイン画面<br>
+  アプリを立ち上げたときに表示される画面です<br>
+  ゲーム中に主に使用します<br>
+  <a href="#" class="btn-square-shadow">Undo</a>:操作を１つ戻します<br>
+  <a href="#" class="btn-square-shadow">New</a>:ゲーム記録を消して新しくゲームを始めます<br>
+  T:試合開始からの経過時間です<br>
+  W:ダブルのときにオン(緑色)にします<br>
+    スコアは適宜更新されます<br>
+ <a href="#"" class="btn-square-shadow">History</a>:サマリー画面に移動します<br>
+ <textarea cols=10 placeholder="Name" class="playerName"></textarea><br>
+ :各プレイヤーの氏名やナンバーなどを入力します<br>
+ Dead:これまでの無効球の総数です<br>
+<a href="#" class="btn-gradient-radius" id='timeoutL'>Time</a><br>
+:ターン中のプレイヤーのタイムアウトを使用します<br>
+Inning:これまでの総イニング数です<br>
+<img src="img/scoreExample.png" class="scoreExample"><br>
+:(画像のように)明るい緑のプレイヤーの番です<br>
+暗い緑の四角をタッチすると手番を交代します<br>
+右上(右プレイヤーは左上)に現在の負け点(勝った場合は勝ち点)が表示されます<br>
+真ん中に大きく点数が表示されます<br>
+点数の下に勝ちまでの残り点数が表示されます<br>
+下に最後に入れたボール３つが表示されます<br>
+<div href="#" class="led-yellow"></div>:このセットの残りタイムアウト使用可能回数です<br>
+２つとも暗い場合は、次のセットまで使用不能です<br>
+
+
+<div class="cp_ipselect">
+  <select class="cp_sl06" id="skillL" onchange='writeSkill("L")' required>
+    <option value="1">SL1→14</option>
+    <option value="2">SL2→19</option>
+    <option value="3">SL3→25</option>
+    <option value="4">SL4→31</option>
+    <option value="5">SL5→38</option>
+    <option value="6">SL6→46</option>
+    <option value="7">SL7→55</option>
+    <option value="8">SL8→65</option>
+    <option value="9">SL9→75</option>
+  </select>
+  <span class="cp_sl06_highlight"></span>
+</div>
+:プレイヤーのスキル(SL)を選択します<br>
+→の後ろがゴールの点数です<br>
+<div class="btn-square-shadow2">Safe</div>
+:プレイヤーのセーフティの総数です<br>
+タッチすると手番のプレイヤーのセーフティをカウントして手番を交代します<br>
+BR:マスワリ(ブレイクランアウト)の数です<br>
+自動でカウントされます<br>
+<div class="btn-square-shadow2" onclick="addAce()">Ace</div>
+:エースの数です<br>
+タッチすると手番のプレイヤーのエースをカウントします<br>
+<div class="btnDeadArea">
+  <input type="checkbox" id="btnDeadCheck">
+    <label for="btnDeadCheck">
+      <span>Dead</span>
+    </label>
+</div>
+:無効球選択モードを切り替えます<br>
+ボタンが赤く、ボールの背景が茶色のときは無効球選択モードです<br>
+各ボールをタッチすると無効球としてカウントします<br>
+手番を交代すると自動でオフになります<br>
+
+<br>
+・タイムアウト画面<br>
+60秒をカウントダウンします<br>
+60秒を30秒過ぎると自動でメイン画面に戻ります<br>
+<a href="#" class="btn-square-shadow">＜</a><br>
+:メイン画面に戻ります<br>
+<div class="btnPause">
+<input type="checkbox" id="pause">
+  <label for="pause">
+    <span>Pause</span>:タイムアウトを一時停止します。10分間放置すると自動でメイン画面に戻ります。<br>
+  </label>
+</div>
+
+<br>
+・サマリー画面<br>
+<img src="img/SummaryExample.png" class="SummaryExample"><br>
+現時点までの試合のまとめを表示します<br>
+<a href="#" class="btn-square-shadow">＜</a><br>
+:メイン画面に戻ります<br>
+<a href="#" class="btn-square-shadow">Detail</a><br>
+:詳細画面に移動します<br>
+S列:各セットの成績です<br>
+最後のセットでは左(L)、右(R)勝者を表示します<br>
+また最後の列では勝ち点、負け点を表示します<br>
+L列:左プレイヤーの成績を表示します<br>
+R列:右プレイヤーの成績を表示します<br>
+I列:各セットのイニング数を表示します<br>
+最後の列では合計のイニング数を表示します<br>
+D列:各セットの無効球の数を表示します<br>
+最後の列では合計の無効球の数を表示します<br>
+
+<br>
+・詳細履歴画面<br>
+現時点までの試合の詳細履歴を表示します<br>
+<a href="#" class="btn-square-shadow">＜</a>:メイン画面に戻ります<br>
+<a href="#" class="btn-square-shadow">Summary</a>サマリー画面に移動します<br>
+L,R列:<br>
+<img src="img/no9trans.png" class="example">:ボールを入れたタイミングで表示します<br>
+<img src="img/Change.png" class="example">:手番交代したタイミングで表示します<br>
+<img src="img/Safety.png" class="example">:セーフティしたタイミングで表示します<br>
+I列:イニングが増えたタイミングで表示します<br>
+D列:無効球が増えたタイミングで表示します<br>
+その他はサマリー画面と同様です<br>
+
+
+</body>
+</html>

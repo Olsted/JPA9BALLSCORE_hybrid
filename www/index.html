@@ -1,0 +1,231 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: content: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+    <script src="components/loader.js"></script>
+    <link rel="stylesheet" href="components/loader.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/help.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:300|Amatic+SC:700|Anton|Bangers|Caveat|Cherry+Swash:700|Corben:700|Creepster|Economica:700|Homemade+Apple|IM+Fell+DW+Pica+SC|Kaushan+Script|Londrina+Shadow|Montserrat+Subrayada|Oswald:700|Permanent+Marker|Quicksand|Roboto+Condensed:700|Teko|Vollkorn&display=swap" rel="stylesheet">
+    <script>
+    </script>
+</head>
+<body>
+
+<table>
+  <tr><td height='20%'>
+<table align="center" id='headTable' class='table'>
+  <tbody>
+    <tr>
+        <!-- <td><label>T
+            <input type="text" id="teamL" class="team" maxlength="5" size="3" value="" placeholder="Team No." type="tel" onchange='writeTeam("L")'></label></td> -->
+        <td><a href="#" class="btn-square-shadow" onclick="undo()">Undo</a></td>
+        <td><label><a href="#" class="btn-square-shadow" onclick="startNewGame()">New</a></label></td>
+        <td><label id='timeN'>--:--</label></td>
+        <td><label id='lDouble'>-</label> <button class="switch"><label class="switch__label">
+              <input type="checkbox" class="switch__input"  id="double" onclick='writeDouble()'>
+              <span class="switch__content"></span>
+              <span class="switch__circle"></span>
+            </label></button></td>
+        <!-- <td><label>T
+            <input type="text" id="teamR" class="team" maxlength="5" size="3" value="" placeholder="Team No." type="tel" onchange='writeTeam("R")'></label></td> -->
+        <td><a href="summary.html" class="btn-square-shadow">History</a></td>
+        <td><a href='helpIndex.html'><img src='img/help.png' class='helpLink' alt='help'></a></td>
+    </tr>
+
+    <tr>
+        <!-- <td><label>P
+            <input type="text" id="playerNoL" maxlength="20" size="12" value="" placeholder="Player No." class="playerNo" type="tel" onchange='writePlayerNo("L")'></label></td> -->
+            <td><textarea cols=10 id="playerNameL" placeholder="Name" class="playerName" onchange='writePlayerName("L")'></textarea></td>
+        <!-- <td><textarea cols=10 id="playerNameL" placeholder="名前" class="playerName" onchange='writePlayerName("L")'></textarea></td> -->
+        <td><label>Dead </label><label id="dead">-</label></td>
+        <!-- <td><a href="timer.html" class="btn-gradient-radius" id='timeoutL' onclick='takeTimeout()'>Time</a> -->
+        <!-- <td><a href="#" class="btn-gradient-radius" id='timeoutL' onclick='takeTimeout()'>TimeOut</a>
+        </td> -->
+        <td align='center'>
+          <!-- <img src="img/timeout.png" class='timeout' onclick='takeTimeout()'> -->
+            <img src="img/freeball.png" id="freeball" class='freeball' onclick='getFreeball()'>
+        </td>
+        <td><label>Inning </label><label id="inning">-</label></td>
+        <!-- <td><label>P
+            <input type="text" id="playerNoR" maxlength="20" size="12" value="" placeholder="Player No." class="playerNo" type="tel" onchange='writePlayerNo("R")'></label></td> -->
+            <td><textarea cols=10 id="playerNameR" placeholder="Name" class="playerName" onchange='writePlayerName("R")'></textarea></td>
+        <td><label class='version'>v1.1.7</label></td>
+    </tr>
+  </tbody>
+</table>
+
+</td></tr>
+<tr><td height='60%'>
+
+<table align="center" id='mainTable' class='table'>
+  <tbody>
+    <tr><td width='20%'>
+          <div class="playerArea">
+            <input type="checkbox" id="turnL" onclick='changeTurn("L")'>
+              <label for="turnL">
+                <div id="pointL"></div><br>
+                <span class="score" id="scoreL">Le</span><br>
+                <span class="more" id="moreL">play JPA</span><br>
+                <img src="" id="lastShotBallL3">
+                <img src="" id="lastShotBallL2">
+                <img src="" id="lastShotBallL1">
+              </label>
+          </div></td>
+        <td width='60%'>
+          <table align='center' width='100%' class='miscTable'>
+            <!-- <caption>
+              <label>S </label><label id='timeS'>--:--</label><label> → </label><label id='timeN'></label><label></label><label id='timeE'></label>
+            </caption> -->
+            <tbody>
+              <tr><td align="center">
+                <!-- <div>TO L</div> -->
+                <img src="img/timeout.png" class='timeout' id='TOL' onclick='takeTimeout()'>
+                    <div class="led-box">
+                      <div class="led-yellow-off" id='timeoutL1'></div>
+                    </div>
+                    <div class="led-box">
+                      <div class="led-yellow-off" id='timeoutL2'></div>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="cp_ipselect">
+                      <select class="cp_sl06" id="skillL" onchange='writeSkill("L")' required>
+                        <option value="1">SL1→14</option>
+                        <option value="2">SL2→19</option>
+                        <option value="3">SL3→25</option>
+                        <option value="4">SL4→31</option>
+                        <option value="5">SL5→38</option>
+                        <option value="6">SL6→46</option>
+                        <option value="7">SL7→55</option>
+                        <option value="8">SL8→65</option>
+                        <option value="9">SL9→75</option>
+                      </select>
+                      <span class="cp_sl06_highlight"></span>
+                      <span class="cp_sl06_selectbar"></span>
+                    </div>
+                    <!-- <a href="#" class="btn-gradient-radius" id='timeoutL' onclick='takeTimeout("L")'>Time</a> -->
+                    </td>
+                  <td>
+                    <table class='innerTable'>
+                      <tbody>
+                        <!-- <tr><td align="center" id="pointL"></td>
+                            <td align="center">ポイント</td>
+                            <td align="center" id="pointR"></td>
+                        </tr> -->
+                        <!-- <tr><td>a</td>
+                            <td>b</td>
+                        </tr> -->
+                        <!-- <tr><td></td>
+                            <td><img src="img/freeball.png" id="freeball" class='freeball'></td>
+                            <td></td>
+                        </tr> -->
+                        <tr><td><label id = 'safeL'>-</label></td>
+                            <td class="btn-square-shadow2" onclick="addSafety()">Safety</td>
+                            <td><label id = 'safeR'></label></td>
+                        </tr>
+                        <tr><td><label id ='brL'>-</label></td>
+                            <td>BR</td>
+                            <td><label id ='brR'>-</label></td>
+                        </tr>
+                        <tr><td><label id = 'aceL'>-</label></td>
+                            <td class="btn-square-shadow2" onclick="addAce()">Ace</td>
+                            <td><label id = 'aceR'>-</label></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                  <td align="center">
+                <!-- <div>TO R</div> -->
+                <img src="img/timeout.png" class='timeout' id='TOR' onclick='takeTimeout()'>
+                    <div class="led-box">
+                      <div class="led-yellow-off" id='timeoutR2'></div>
+                    </div>
+                    <div class="led-box">
+                      <div class="led-yellow-off" id='timeoutR1'></div>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="cp_ipselect">
+                      <select class="cp_sl06" id="skillR"  onchange='writeSkill("R")' required>
+                        <option value="1">SL1→14</option>
+                        <option value="2">SL2→19</option>
+                        <option value="3">SL3→25</option>
+                        <option value="4">SL4→31</option>
+                        <option value="5">SL5→38</option>
+                        <option value="6">SL6→46</option>
+                        <option value="7">SL7→55</option>
+                        <option value="8">SL8→65</option>
+                        <option value="9">SL9→75</option>
+                      </select>
+                      <span class="cp_sl06_highlight"></span>
+                      <span class="cp_sl06_selectbar"></span>
+                    </div>
+                    <!-- <a href="#" class="btn-gradient-radius" id='timeoutR' onclick='takeTimeout("R")'>Time</a> -->
+                    
+                  </td></tr>
+            </tbody>
+          </table>
+        </td>
+        <td width='20%'>
+          <div class="playerArea">
+            <input type="checkbox" id="turnR" onclick='changeTurn("R")'>
+              <label for="turnR" class='blkScore'>
+                <div id="pointR"></div><br>
+                <span class="score" id="scoreR">t's</span><br>
+                <span class="more" id="moreR">match!</span><br>
+                <img src="" width="30px" id="lastShotBallR1">
+                <img src="" width="25px" id="lastShotBallR2">
+                <img src="" width="20px" id="lastShotBallR3">
+              </label>
+          </div></td>
+    </tr>
+  </tbody>
+</table>
+
+</td></tr>
+<tr><td height='20%'>
+
+<table align="center" id="ballTable" class='table'>
+  <tr><td width="10%">
+        <!-- <div class="btnDeadArea">
+          <input type="checkbox" id="btnDeadCheck" onclick="changeBallBG()">
+            <label for="btnDeadCheck">
+              <span>Dead</span>
+            </label>
+        </div></td> -->
+        <img src="img/Dead_Off.png" id="btnDeadCheck" class="btnDead" onclick="changeBallBG()"></td>
+      <td><img src="img/no1trans.png" id="no1" class='ball' onclick='shoot(1)'></td>
+      <td><img src="img/no2trans.png" id="no2" class='ball' onclick='shoot(2)'></td>
+      <td><img src="img/no3trans.png" id="no3" class='ball' onclick='shoot(3)'></td>
+      <td><img src="img/no4trans.png" id="no4" class='ball' onclick='shoot(4)'></td>
+      <td><img src="img/no5trans.png" id="no5" class='ball' onclick='shoot(5)'></td>
+      <td><img src="img/no6trans.png" id="no6" class='ball' onclick='shoot(6)'></td>
+      <td><img src="img/no7trans.png" id="no7" class='ball' onclick='shoot(7)'></td>
+      <td><img src="img/no8trans.png" id="no8" class='ball' onclick='shoot(8)'></td>
+      <td><img src="img/no9trans.png" id="no9" class='ball' onclick='shoot(9)'></td>
+  </tr>
+</table>
+
+</td></tr></table>
+
+  <script>
+    window.onload = function() {
+      // console.log(android.os.Environment.DIRECTORY_DOWNLOADS);
+      var Array = document.querySelectorAll("[id^=n]");
+      for(i=0;i<9;i++){
+        Array[i].classList.add('animated', "bounceInUp");
+      };
+      
+      checkData();
+      
+    }
+  </script>
+    <script src="js/time.js"></script>
+    <script src="js/array.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+    <link rel="stylesheet" href="components/loader.css">
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:300|Amatic+SC:700|Anton|Bangers|Caveat|Cherry+Swash:700|Corben:700|Creepster|Economica:700|Homemade+Apple|IM+Fell+DW+Pica+SC|Kaushan+Script|Londrina+Shadow|Montserrat+Subrayada|Oswald:700|Permanent+Marker|Quicksand|Roboto+Condensed:700|Teko|Vollkorn&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/timer.css">
+    <link rel="stylesheet" href="css/help.css">
+    <script src="components/loader.js"></script>
+    <script>
+        //
+        // TODO: Write JavaScript code here
+        //
+    </script>
+</head>
+<body>
+    <!-- TODO: Please edit here -->
+
+<a href="index.html" class="btn-square-shadow" id='back2Main'>＜</a>
+<div id='time'>60</div>
+<div class="btnPause">
+<input type="checkbox" id="pause" onclick="changeBtnBG()">
+  <label for="pause">
+    <span>Pause</span>
+  </label>
+</div>
+<script>
+
+  function loopSleep(_loopLimit,_interval, _mainFunc){
+    var loopLimit = _loopLimit;
+    var interval = _interval;
+    var mainFunc = _mainFunc;
+    var i = 0;
+    var loopFunc = function () {
+      var result = mainFunc(i);
+      if (result === false) {
+        // break機能
+        return;
+      }
+      i = i + 1;
+      if (i < loopLimit) {
+        setTimeout(loopFunc, interval);
+      }else{
+        
+        back2Main.click();
+      }
+    }
+    loopFunc();
+  }
+
+  var changeBtnBG = function(){
+    if(pause.checked==true){
+      document.getElementById('pause').style.backgroundColor = 'rgb(192, 107, 28)';
+    }else{
+      document.getElementById('pause').style.backgroundColor = '#333333';
+    }
+  }
+
+
+
+  window.onload = function() {
+    loopSleep(600, 1000, function(i){
+      if(document.getElementById('pause').checked == false){
+        document.getElementById('time').innerHTML--;
+      }
+      if(document.getElementById('time').innerHTML < -30){
+        back2Main.click();
+      }
+    });
+  }
+</script>
+
+</body>
+</html>

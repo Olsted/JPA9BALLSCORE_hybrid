@@ -1,0 +1,565 @@
+/**/
+
+* {
+-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+/* font-family: 'Bangers', cursive; */
+    
+
+font-family: 'Cherry Swash', cursive;
+
+}
+
+html,body {
+  height: 100%;
+  /* width: 95%; */
+  margin:0;
+  padding:0;
+  border:0;
+  overflow:hidden;
+}
+
+.team,.playerNo,.playerName {
+  color: rgb(30, 30, 30);
+  color: rgb(243, 242, 242);
+  font-size: 2.5vw;
+}
+
+input{
+  background-color: ghostwhite;
+}
+
+.playerName {
+  line-height: 2.3vw;
+}
+
+#dead,#inning {
+  font-size: 4vw;
+}
+#timeS,#timeN,#timeE {
+  /* font-size: 2.8vw; */
+  font-size: 3.5vw;
+}
+
+body {
+  background-color: #333333;
+  /* background-color: #ffffff; */
+  color:ghostwhite;
+}
+.btn-square-shadow {
+  display: inline-block;
+  padding: 0vw 3vw;
+  text-decoration: none;
+  background: rgb(192, 107, 28);/*ボタン色*/
+  background     : rgb(75, 74, 74);                /* 背景色             */
+  /* color: rgb(16, 168, 16); */
+  color: #FFF;
+  border-bottom: solid 4px #627295;
+  border-radius: 3px;
+  font-size: 3vw;
+}
+.btn-square-shadow:active {
+  /*ボタンを押したとき*/
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+  border-bottom: none;
+}
+.btn-square-shadow2 {
+  display: inline-block;
+  padding: 0.3vw 1vw;
+  margin: 0.3vw 0;
+  text-decoration: none;
+  background: rgb(192, 107, 28);/*ボタン色*/
+  background     : rgb(75, 74, 74);                /* 背景色             */
+  /* background: #668ad8;ボタン色 */
+  color: #FFF;
+  border-bottom: solid 4px #627295;
+  border-radius: 3px;
+  /* font-size: 2.5vw; */
+  font-size: 3vw;
+}
+.btn-square-shadow:active2 {
+  /*ボタンを押したとき*/
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+  border-bottom: none;
+}
+
+/* iOS風 */
+.switch {
+  background-color: rgba(255, 255, 255, 0);
+  border-style: none;
+}
+
+.switch__label {
+	/* width: 50px; */
+	width: 8.5vw;
+	position: relative;
+	display: inline-block;
+}
+.switch__content {
+	display: block;
+  cursor: pointer;
+  position: relative;
+  /* border-radius: 30px;
+  height: 31px; */
+  border-radius: 4.1vw;
+  height: 4vw;
+  overflow: hidden;
+}
+.switch__content:before {
+	content: "";
+	display: block;
+	position: absolute;
+	/* width: calc(100% - 3px);
+	height: calc(100% - 3px); */
+	width: calc(100% - 0.5vw);
+	height: calc(100% - 0.5vw);
+	top: 0;
+	left: 0;
+	border: 1.5px solid #E5E5EA;
+	border-radius: 30px;
+	background-color: #fff;
+}
+.switch__content:after {
+	content: "";
+	display: block;
+	position: absolute;
+	background-color: transparent;
+	width: 0;
+	height: 0;
+	top: 50%;
+	left: 50%;
+	/* border-radius: 30px; */
+	border-radius: 3vw;
+	-webkit-transition: all .5s;
+	   -moz-transition: all .5s;
+	    -ms-transition: all .5s;
+	     -o-transition: all .5s;
+	        transition: all .5s;
+}
+.switch__input {
+	display: none;
+}
+ 
+.switch__circle {
+	display: block;
+	/* top: 2px;
+	left: 2px; */
+	top: 0.2vw;
+	left: 0.2vw;
+	position: absolute;
+	-webkit-box-shadow: 0 2px 6px #999;
+	        box-shadow: 0 2px 6px #999;
+	/* width: 27px;
+	height: 27px; */
+	width: 3.5vw;
+	height: 3.5vw;
+	/* -webkit-border-radius: 20px;
+	        border-radius: 20px; */
+	-webkit-border-radius: 1.75vw;
+	        border-radius: 1.75vw;
+	background-color: #fff;
+	-webkit-transition: all .5s;
+	   -moz-transition: all .5s;
+	    -ms-transition: all .5s;
+	     -o-transition: all .5s;
+	        transition: all .5s;
+}
+.switch__input:checked ~ .switch__circle {
+	/* left: 21px; */
+	left: 4.8vw;
+}
+ 
+.switch__input:checked ~ .switch__content:after {
+	background-color: #4BD964;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.btn-gradient-radius {
+  display: inline-block;
+  padding: 0.1vw 3vw;
+  padding: 0.8vw 1vw;
+  margin: 1vw;
+  margin: 0vw;
+  font-size: 3vw;
+  /* font-size: 2.5vw; */
+  border-radius: 25px;
+  text-decoration: none;
+  color: #FFF;
+  background-image: linear-gradient(45deg, #FFC107 0%, #ff8b5f 100%);
+  background-image: linear-gradient(-45deg, rgb(189, 189, 49) 0%, #313130 100%);
+  transition: .4s;
+}
+
+.btn-gradient-radius:hover {
+  background-image: linear-gradient(45deg, #FFC107 0%, #f76a35 100%);
+}
+
+.playerName {
+  resize: none;
+} 
+
+.table {
+  width: 98%;
+  height: 100%;
+}
+
+.miscTable * {
+  text-align: center;
+}
+
+/* #headTable {
+  display: inline-block;
+  display: float;
+  height: 20%;
+  justify-content: start;
+  vertical-align: top;
+} */
+/* #mainTable {
+  display: inline-block;
+  display: float;
+  height: 40%;
+  justify-content: center;
+  vertical-align: middle;
+} */
+/* #ballTable {
+  display: inline-block;
+  display: float;
+  height: 20%;
+  justify-content: end;
+  vertical-align: bottom;
+} */
+
+#pointL {
+  font-size: 3.2vw;
+  font-size: 4vw;
+  text-align: right;
+  color          :rgb(248, 248, 248);
+}
+
+#pointR {
+  font-size: 3.2vw;
+  font-size: 4vw;
+  text-align: left;
+  color          :rgb(248, 248, 248);
+}
+
+/* #pointL,#pointR {
+  font-size: 3.2vw;
+} */
+
+.innerTable {
+  height: 100%;
+  font-size: 2.8vw;
+  font-size: 3.5vw;
+  text-align: center;
+  font-weight: 900;
+  border-collapse: separate;
+  border-spacing: 1vw 2vw;
+  border-spacing: 1vw 3vh;
+}
+
+input, textarea {
+  /* padding:1px;
+  font-family:Arial, sans-serif; */
+  /* color:#aaa; */
+  color:rgb(255, 255, 255);
+  border:solid 1px #ccc;
+  background-color: #313130;
+  margin:0 0 10px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -moz-box-shadow: inset 0 0 4px rgba(0,0,0,0.2);
+  -webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2);
+  box-shadow: inner 0 0 4px rgba(0, 0, 0, 0.2);
+}
+
+input:focus, textarea:focus {
+  border:solid 1px #EEA34A;
+}
+
+
+.cp_ipselect {
+	position: relative;
+	width: 100%;
+	margin: auto auto;
+	text-align: center;
+}
+.cp_sl06 {
+	position: relative;
+	/* font-family: inherit; */
+	background-color: transparent;
+	width: 100%;
+	padding: 5px 5px 3px 15px;
+	font-size: 3.3vw;
+	border-radius: 0;
+	border: none;
+	border-bottom: 1px solid rgba(0,0,0, 0.3);
+  color: ghostwhite;
+}
+.cp_sl06:focus {
+	outline: none;
+	border-bottom: 1px solid rgba(0,0,0, 0);
+}
+.cp_ipselect .cp_sl06 {
+	appearance: none;
+	-webkit-appearance:none
+}
+.cp_ipselect select::-ms-expand {
+	display: none;
+}
+.cp_ipselect:after {
+	position: absolute;
+	top: 18px;
+	right: 10px;
+	width: 0;
+	height: 0;
+	padding: 0;
+	content: '';
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-top: 6px solid rgba(0, 0, 0, 0.3);
+	pointer-events: none;
+}
+.cp_sl06_selectlabel {
+	color: rgba(207, 199, 199, 0.5);
+	font-size: 4vw;
+	/* font-weight: normal; */
+	position: absolute;
+	pointer-events: none;
+	left: 0;
+	top: 10px;
+	transition: 0.2s ease all;
+}
+.cp_sl06:focus ~ .cp_sl06_selectlabel, .cp_sl06:valid ~ .cp_sl06_selectlabel {
+	color: #da3c41;
+	top: -20px;
+	transition: 0.2s ease all;
+	font-size: 4vw;
+}
+.cp_sl06_selectbar {
+	position: relative;
+	display: block;
+	width: 100%;
+}
+.cp_sl06_selectbar:before, .cp_sl06_selectbar:after {
+	content: '';
+	height: 2px;
+	width: 0;
+	bottom: 1px;
+	position: absolute;
+	background: #da3c41;
+	transition: 0.2s ease all;
+}
+.cp_sl06_selectbar:before {
+	left: 50%;
+}
+.cp_sl06_selectbar:after {
+	right: 50%;
+}
+.cp_sl06:focus ~ .cp_sl06_selectbar:before, .cp_sl06:focus ~ .cp_sl06_selectbar:after {
+	width: 50%;
+}
+.cp_sl06_highlight {
+	position: absolute;
+	top: 25%;
+	left: 0;
+	pointer-events: none;
+	opacity: 0.5;
+}
+
+ /* === ボタンを表示するエリア ============================== */
+.playerArea {
+  margin         : auto;                /* 中央寄せ           */
+  width          : 100%;                /* ボタンの横幅       */
+  height          : 100%;
+  /* vertical-align: middle; */
+}
+ 
+ /* === チェックボックス ==================================== */
+.playerArea input[type="checkbox"] {
+  display        : none;            /* チェックボックス非表示 */
+}
+ 
+ /* === チェックボックスのラベル（標準） ==================== */
+.playerArea label {
+  display        : block;               /* ボックス要素に変更 */
+  box-sizing     : border-box;          /* 枠線を含んだサイズ */
+  text-align     : center;              /* 文字位置は中央     */
+  border         : 2px solid rgb(226, 226, 226);      /* 枠線(一旦四方向)   */
+  border         : 2px solid rgb(80, 59, 13);      /* 枠線(一旦四方向)   */
+  border-radius  : 3px;                 /* 角丸               */
+  height         : 100%;                /* ボタンの高さ       */
+  width         : 100%;                /* ボタンの幅       */
+  /* height         : 150px;                ボタンの高さ       */
+  color          : rgb(80, 80, 80);
+  /* color          :rgb(248, 248, 248); */
+  /* color          : rgb(247, 193, 46); */
+  line-height    : 1vw;                /* 太字               */
+  font-weight    : bold;                /* 太字               */
+  background     : #eee;                /* 背景色             */
+  background     : rgb(43, 85, 34);                /* 背景色             */
+  box-shadow     : none;    /* 影付け             */
+  transition     : .3s;                 /* ゆっくり変化       */
+  /* padding-top: 8%; */
+}
+ 
+ /* === ON側のチェックボックスのラベル（ONのとき） ========== */
+.playerArea #turnL:checked + label {
+  background     : #78bd78;             /* 背景色             */
+  background     : #40a140;             /* 背景色             */
+  box-shadow     : 3px 3px 6px #888;                /* 影を消す           */
+  box-shadow     : 3px 3px 6px rgb(158, 138, 90);                /* 影を消す           */
+  /* color          :rgb(248, 248, 248); */
+  border         : 2px solid rgb(192, 107, 28);      /* 枠線(一旦四方向)   */
+}
+
+ /* === ON側のチェックボックスのラベル（ONのとき） ========== */
+.playerArea #turnR:checked + label {
+  background     : #78bd78;             /* 背景色             */
+  background     : #40a140;             /* 背景色             */
+  box-shadow     : 3px 3px 6px #888;                /* 影を消す           */
+  box-shadow     : 3px 3px 6px rgb(158, 138, 90);                /* 影を消す           */
+  /* color          :rgb(248, 248, 248); */
+  border         : 2px solid rgb(192, 107, 28);      /* 枠線(一旦四方向)   */
+}
+
+
+ /* === ボタンを表示するエリア ============================== */
+.btnDeadArea {
+  /* margin         : auto;                中央寄せ           */
+  width          : 8.5vw;                /*ボタンの横幅      */
+}
+ 
+ /* === チェックボックス ==================================== */
+.btnDeadArea input[type="checkbox"] {
+  display        : none;            /* チェックボックス非表示 */
+}
+ 
+ /* === チェックボックスのラベル（標準） ==================== */
+.btnDeadArea label {
+  display        : block;               /* ボックス要素に変更 */
+  box-sizing     : border-box;          /* 枠線を含んだサイズ */
+  text-align     : center;           /*   文字位置は中央     */
+  border         : 2px solid rgb(226, 226, 226);      /* 枠線(一旦四方向)   */
+  border-radius  : 3px;                 /* 角丸               */
+  /* height         : 40px;                ボタンの高さ       */
+  height         : 100%;                /* ボタンの高さ       */
+  color          : rgb(80, 80, 80);
+  /* line-height    : 40px;                太字               */
+  line-height    : 300%;                /* 太字               */
+  font-weight    : bold;                /* 太字               */
+  background     : #eee;                /* 背景色             */
+  box-shadow     : none;    /* 影付け             */
+  transition     : .3s;                 /* ゆっくり変化       */
+  font-size: 3vw;
+}
+ 
+ /* === ON側のチェックボックスのラベル（ONのとき） ========== */
+.btnDeadArea #btnDeadCheck:checked + label {
+  background     : #e00a0a;             /* 背景色             */
+  box-shadow     : 3px 3px 6px #888;                /* 影を消す           */
+  /* color          :rgb(248, 248, 248); */
+  border         : 2px solid rgb(192, 107, 28);      /* 枠線(一旦四方向)   */
+}
+
+.ball {
+  width:90%;
+}
+
+.btnDead {
+  width:90%;
+}
+
+.freeball {
+  /* height:10%; */
+  /* width: 3vw; */
+  width: 6vw;
+}
+
+.score {
+  font-size: 12vw;
+  font-size: 10vw;
+  line-height: 120%;
+  color          :rgb(248, 248, 248);
+}
+
+.more {
+  /* font-size: 1.3em; */
+  font-size: 3.5vw;
+  font-size: 3vw;
+  line-height: 120%;
+  color          :rgb(248, 248, 248);
+}
+
+#lastShotBallL1,#lastShotBallR1 {
+  width: 30%;
+}
+
+#lastShotBallL2,#lastShotBallR2 {
+  width: 25%;
+}
+
+#lastShotBallL3,#lastShotBallR3 {
+  width: 20%;
+}
+
+td {
+  font-size: 2.8vw;
+}
+/* 
+.blkScore {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+} */
+
+.led-box {
+  height: 100%;
+  width: 20%;
+  margin: 0.1vw 2vw;
+  float: left;
+}
+
+.led-box p {
+  font-size: 100%;
+  text-align: center;
+  margin: 100%;
+}
+
+.led-yellow-off {
+  margin: auto auto;
+  width: 4vw;
+  height: 4vw;
+  background-color: rgb(145, 145, 21);
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #808002 0 -1px 9px, #AA0 0 2px 12px;
+}
+
+.led-yellow {
+  /* margin: auto auto; */
+  width: 4vw;
+  height: 4vw;
+  background-color: #FF0;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #808002 0 -1px 9px, #FF0 0 2px 12px;
+}
+
+.version {
+  font-size: 3vw;
+}
+
+.timeout {
+  display: block;
+  margin: 1vw auto;
+  width: 6vw;
+}
